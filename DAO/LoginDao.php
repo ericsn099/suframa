@@ -5,13 +5,10 @@ class LoginDao
 
     public function __construct()
     {
-        try {
-            $dsn = "mysql:host=localhost:3306;dbname=465650";
-            $opcoes = array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION);
-            $this->conexao = new PDO($dsn, '465650', '19019407eric', $opcoes);
-        } catch (PDOException $e) {
-            echo $e->getMessage();
-        }
+        include_once "Conn/Conn.php";
+
+        $conn = new Conn();
+        $this->conexao = $conn->returnConnection();
     }
 
     public function validarUser($login, $senha, $tipouser)
@@ -33,7 +30,7 @@ class LoginDao
         return $stmt->fetchObject("LoginModel");
     }
 
-	public function selectByLogin(string $login)
+    public function selectByLogin(string $login)
     {
         include_once "Model/LoginModel.php";
 
@@ -45,7 +42,6 @@ class LoginDao
         $stmt->bindValue(1, $login);
         $stmt->execute();
 
-		return $stmt->fetchObject("LoginModel");
-
+        return $stmt->fetchObject("LoginModel");
     }
 }

@@ -8,10 +8,10 @@ require_once "session/sessionAdm.php";
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="stylesheet" href="../css/styleIndex.css" />
-    <link rel="stylesheet" href="../css/modal.css" />
+	<!-- <link rel="stylesheet" href="../css/styleIndex.css" /> -->
+	<link rel="stylesheet" href="../../../css/atualizar-fun.css" />
 
-	<title>Principal</title>
+	<title>Atualizar Funcionario</title>
 </head>
 
 <body>
@@ -34,7 +34,6 @@ require_once "session/sessionAdm.php";
 				<div class="input-item">
 					<div class="icon">
 						<i class="fa-sharp fa-solid fa-user"></i>
-
 					</div>
 					<input type="text" name="login" placeholder="Digite seu login" value="<?= $modelFuncionario->login ?>" required />
 				</div>

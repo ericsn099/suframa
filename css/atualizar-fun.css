@@ -899,8 +899,8 @@
 /*Progress */
 
 .progress{
-    height: 25px;
-    background-color: #191970;
+    height: 20px;
+    background-color: #3025c4;
     margin-bottom: 10px;
 }
 
@@ -911,7 +911,7 @@
     display: flex;
     justify-content: flex-end;
     align-items: center;
-    padding-right: 15px;
+    padding-right: 10px;
     color: #fff;
     overflow: hidden;
 }
@@ -1360,11 +1360,6 @@
     .adm {
         animation: right-in 0.8s ease-in forwards;
     }
-
-    .btn-salvar-d{
-        width: 70px;
-        font-size: 14px;
-    }
 }
 
 @media only screen and (max-device-width: 812px) and (min-device-width: 485px) {
@@ -1530,10 +1525,5 @@
     .modal-add-user {
         justify-content: flex-start;
         padding-top: 30px;
-    }
-
-    .btn-salvar-d{
-        width: 70px;
-        font-size: 15px;
     }
 }

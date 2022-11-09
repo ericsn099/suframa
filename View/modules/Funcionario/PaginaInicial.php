@@ -121,7 +121,7 @@ require_once "session/sessionUsuario.php";
             </div>
 
             <div class="arrow">
-                <<>>
+                Demandas
             </div>
 
 
@@ -135,11 +135,19 @@ require_once "session/sessionUsuario.php";
 
                         <?php foreach ($modelDemanda as $item) : ?>
                             <?php if ($item->porcentagem == 100) { ?>
-                                <div class="demanda-item" style="background-color: #218500bf;">
+                                <div class="demanda-item" style="background-color: 	#2E8B57;">
                                 <?php } else { ?>
                                     <div class="demanda-item">
                                     <?php } ?>
-
+                                    <div class="progress">
+                                    <?php if ($item->porcentagem == 100) { ?>
+                                        <div class="progress-bar" style="width: <?= $item->porcentagem ?>%; background-color: 	#4169E1;">
+                                    <?php } else { ?>
+                                        <div class="progress-bar" style="width: <?= $item->porcentagem ?>%;">
+                                    <?php } ?>
+                                            <?= $item->porcentagem ?>%
+                                        </div>
+                                    </div>
                                     <div class="d-num">
                                         <?php
                                         echo $id = $id + 1; ?>
@@ -169,15 +177,16 @@ require_once "session/sessionUsuario.php";
                                         <form action="/paginaInicial/update" method="POST">
                                             <input type="hidden" name="id" value="<?= $item->id ?>">
                                             <span>Andamento:</span>
-                                            <span><?= $item->porcentagem ?>%</span>
+
                                             <span>
-                                                <select name="andamento_id">
+                                                <select class="s-andamento" name="andamento_id">
+                                                    <option>Selecione</option>
                                                     <?php foreach ($modelAndamento->rows as $item2) : ?>
-                                                        <option value="<?= $item2->id ?>"> <?= $item2->porcentagem ?></option>
+                                                        <option class="v-andamento" value="<?= $item2->id ?>"> <?= $item2->porcentagem ?></option>
                                                     <?php endforeach ?>
                                                 </select>
                                             </span>
-                                            <input type="submit" value="SALVAR">
+                                            <input class="btn-salvar-d" type="submit" value="SALVAR">
                                         </form>
                                     </div>
                                     <div class="d-item">
@@ -218,7 +227,7 @@ require_once "session/sessionUsuario.php";
                     <i class="fa-solid fa-bars"></i>
                 </div>
             </div>
-
+            
             <script src="../js/script.js"></script>
             <script src="../js/modals.js"></script>
 </body>

@@ -19,6 +19,7 @@
                 <?php $msg = null;
                         if (isset($_GET["erro"])) { ?>
                             <div class="alert-danger" role="alert">
+                                <div class="alert-close">     <i class="fa-sharp fa-solid fa-rectangle-xmark"></i></div>
                                 <?php echo "Acesso Inválido" ?>
                                 <!-- RETORNA MENSAGEM DE ERRO SE A SENHA, USUÁRIO OU TIPO DE USUÁRIO ESTIVER INCORRETA-->
                             </div>
@@ -52,6 +53,8 @@
             </form>
         </div>
     </div>
+
+    <script src="../../../js/action.js"></script>
 </body>
 
 </html>
