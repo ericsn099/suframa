@@ -81,17 +81,35 @@ require_once "session/sessionAdm.php";
 				</div>
 
 				<div class=" entrar">
-					<input type="submit" value="salvar" />
+					<input type="submit" value="Salvar" />
 				</div>
-				<a href="/adm">VOLTAR</a>
+
+				<div class="voltar"><a href="/adm">Voltar</a></div>
 			</form>
+
 		</div>
 	</div>
+
+	<!--
+	<div class="modal-aviso">
+		<div class="modal-area">
+			<div class="close-modal"> <i class="fa-sharp fa-solid fa-rectangle-xmark"></i></div>
+			<div class="modal-conteudo">
+				<div class="icon-alerta">
+					<i class="fa-solid fa-triangle-exclamation"></i>
+				</div>
+				<span>Atenção página para alteração de usuário.</span>
+
+			</div>
+		</div>
+	</div>
+						-->
+	<script src="../../../js/alerta.js"> </script>
 </body>
 
 </html>
 <?php
 if (isset($_GET['message'])) {
-    include 'View/feedbackAdm/salvar.php';
+	include 'View/feedbackAdm/salvar.php';
 }
 ?>

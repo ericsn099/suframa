@@ -17,7 +17,6 @@ class LoginController
 
 		$Validacao = $modelLogin->validarLogin($_POST['login'], $_POST['senha'], $_POST['usuario']);
 		if ($Validacao == true) {
-			session_start() or die();
 
 			if ($_POST['usuario'] == 1) {
 				$_SESSION["login"] = $_POST["login"];
