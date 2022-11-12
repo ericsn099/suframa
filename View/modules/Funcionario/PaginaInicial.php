@@ -92,15 +92,7 @@ require_once "session/sessionUsuario.php";
                                 </select>
                             </div>
 
-                            <div class="demanda-option">
-                                <span>Andamento:</span>
-                                <select name="andamento_id">
-                                    <option>Andamento</option>
-                                    <?php foreach ($modelAndamento->rows as $item) : ?>
-                                        <option value="<?= $item->id ?>"> <?= $item->porcentagem ?></option>
-                                    <?php endforeach ?>
-                                </select>
-                            </div>
+                            <input type="hidden" name="andamento_id" value="1">
 
                             <div class="observacao-option">
                                 <span>Observações:</span>
@@ -140,96 +132,96 @@ require_once "session/sessionUsuario.php";
                                     <div class="demanda-item">
                                     <?php } ?>
                                     <div class="progress">
-                                    <?php if ($item->porcentagem == 100) { ?>
-                                        <div class="progress-bar" style="width: <?= $item->porcentagem ?>%; background-color: 	#4169E1;">
-                                    <?php } else { ?>
-                                        <div class="progress-bar" style="width: <?= $item->porcentagem ?>%;">
-                                    <?php } ?>
-                                            <?= $item->porcentagem ?>%
-                                        </div>
-                                    </div>
-                                    <div class="d-num">
-                                        <?php
-                                        echo $id = $id + 1; ?>
-                                    </div>
-                                    <div class="d-item">
-                                        <span>Demanda:</span>
-                                        <span><?= $item->descricao ?></span>
-                                    </div>
-                                    <div class="d-item">
-                                        <span>Tipo de Demanda:</span>
-                                        <span><?= $item->tipoDemanda ?></span>
-                                    </div>
-                                    <div class="d-item">
-                                        <span>Inicio:</span>
-                                        <span><?= $item->data_inicio ?></span>
-                                    </div>
-                                    <div class="d-item">
-                                        <span>Previsão de termino:</span>
-                                        <span><?= $item->data_termino ?></span>
-                                    </div>
-                                    <div class="d-item">
-                                        <span>Prioridade:</span>
-                                        <span><?= $item->prioridade ?></span>
-                                    </div>
+                                        <?php if ($item->porcentagem == 100) { ?>
+                                            <div class="progress-bar" style="width: <?= $item->porcentagem ?>%; background-color: 	#4169E1;">
+                                            <?php } else { ?>
+                                                <div class="progress-bar" style="width: <?= $item->porcentagem ?>%;">
+                                                <?php } ?>
+                                                <?= $item->porcentagem ?>%
+                                                </div>
+                                            </div>
+                                            <div class="d-num">
+                                                <?php
+                                                echo $id = $id + 1; ?>
+                                            </div>
+                                            <div class="d-item">
+                                                <span>Demanda:</span>
+                                                <span><?= $item->descricao ?></span>
+                                            </div>
+                                            <div class="d-item">
+                                                <span>Tipo de Demanda:</span>
+                                                <span><?= $item->tipoDemanda ?></span>
+                                            </div>
+                                            <div class="d-item">
+                                                <span>Inicio:</span>
+                                                <span><?= $item->data_inicio ?></span>
+                                            </div>
+                                            <div class="d-item">
+                                                <span>Previsão de termino:</span>
+                                                <span><?= $item->data_termino ?></span>
+                                            </div>
+                                            <div class="d-item">
+                                                <span>Prioridade:</span>
+                                                <span><?= $item->prioridade ?></span>
+                                            </div>
 
-                                    <div class="d-item">
-                                        <form action="/paginaInicial/update" method="POST">
-                                            <input type="hidden" name="id" value="<?= $item->id ?>">
-                                            <span>Andamento:</span>
+                                            <div class="d-item">
+                                                <form action="/paginaInicial/update" method="POST">
+                                                    <input type="hidden" name="id" value="<?= $item->id ?>">
+                                                    <span>Andamento:</span>
 
-                                            <span>
-                                                <select class="s-andamento" name="andamento_id">
-                                                    <option>Selecione</option>
-                                                    <?php foreach ($modelAndamento->rows as $item2) : ?>
-                                                        <option class="v-andamento" value="<?= $item2->id ?>"> <?= $item2->porcentagem ?></option>
-                                                    <?php endforeach ?>
-                                                </select>
-                                            </span>
-                                            <input class="btn-salvar-d" type="submit" value="SALVAR">
-                                        </form>
-                                    </div>
-                                    <div class="d-item">
-                                        <span>Observações:</span>
-                                        <span><?= $item->observacao ?></span>
-                                    </div>
+                                                    <span>
+                                                        <select class="s-andamento" name="andamento_id">
+                                                            <option>Selecione</option>
+                                                            <?php foreach ($modelAndamento->rows as $item2) : ?>
+                                                                <option class="v-andamento" value="<?= $item2->id ?>"> <?= $item2->porcentagem ?></option>
+                                                            <?php endforeach ?>
+                                                        </select>
+                                                    </span>
+                                                    <input class="btn-salvar-d" type="submit" value="SALVAR">
+                                                </form>
+                                            </div>
+                                            <div class="d-item">
+                                                <span>Observações:</span>
+                                                <span><?= $item->observacao ?></span>
+                                            </div>
                                     </div>
 
                                 <?php endforeach ?>
                             <?php } ?>
+                                    </div>
+
                                 </div>
 
                 </div>
 
-            </div>
 
+                <div class="menu-lateral">
 
-            <div class="menu-lateral">
-
-                <div class="menu">
-                    <div data-key="0" class="menu-option active">
-                        <i class="fa-solid fa-house-user"></i>
-                        <a href="">Home</a>
-                    </div>
-                    <div data-key="1" class="menu-option" id="addDemanda">
-                        <i class="fa-solid fa-book-medical"></i>
-                        <a href="#">Add demandas</a>
-                    </div>
-                    <div data-key="0" class="menu-option ">
-                        <i class="fa-solid fa-right-from-bracket"></i>
-                        <a href="../Controller/sair.php">Sair</a>
+                    <div class="menu">
+                        <div data-key="0" class="menu-option active">
+                            <i class="fa-solid fa-house-user"></i>
+                            <a href="">Home</a>
+                        </div>
+                        <div data-key="1" class="menu-option" id="addDemanda">
+                            <i class="fa-solid fa-book-medical"></i>
+                            <a href="#">Add demandas</a>
+                        </div>
+                        <div data-key="0" class="menu-option ">
+                            <i class="fa-solid fa-right-from-bracket"></i>
+                            <a href="../Controller/sair.php">Sair</a>
+                        </div>
                     </div>
                 </div>
-            </div>
 
-            <div class="button-close">
-                <div class="icon">
-                    <i class="fa-solid fa-bars"></i>
+                <div class="button-close">
+                    <div class="icon">
+                        <i class="fa-solid fa-bars"></i>
+                    </div>
                 </div>
-            </div>
-            
-            <script src="../js/script.js"></script>
-            <script src="../js/modals.js"></script>
+
+                <script src="../js/script.js"></script>
+                <script src="../js/modals.js"></script>
 </body>
 
 </html>

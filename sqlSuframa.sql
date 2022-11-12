@@ -67,7 +67,7 @@ CREATE TABLE IF NOT EXISTS `demanda` (
     FOREIGN KEY (`tipo_demanda_id`) REFERENCES `tipo_demanda` (`id`)
 ) ENGINE = InnoDB;
 
-INSERT INTO `andamento`(`porcentagem`) VALUES ('10'),('20'),('30'),('40'),('50'),('60'),('70'),('80'),('90'),('100');
+INSERT INTO `andamento`(`porcentagem`) VALUES ('0'),('10'),('20'),('30'),('40'),('50'),('60'),('70'),('80'),('90'),('100');
 INSERT INTO `area_atuacao`(`nome`) VALUES ('CGMOI'),('COSIS'),('DITIC');
 INSERT INTO `cargo`(`nome`) VALUES ('Assessoria'),('Coordenador'),('Coordenador-Geral'),('Equipe Técnica'),('Estagiário'),('Secretária');
 INSERT INTO `prioridade`(`nome`) VALUES ('Baixa'),('Média'),('Alta');
